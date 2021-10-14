@@ -1,4 +1,8 @@
+**BEFORE**
+This project is a forked project from [yihong0616](https://github.com/yihong0618/GitHubPoster), the only reason I create my own project instead of fork is only because the **github-ci** not worked somehow when I fork the project. So go ahead to do something more there `https://github.com/yihong0618/GitHubPoster`.
+
 # GitHubPoster
+
 Make everything a GitHub svg poster and [skyline](https://skyline.github.com/)!
 
 简体中文 | [English](https://github.com/yihong0618/GitHubPoster/blob/main/README-EN.md)
