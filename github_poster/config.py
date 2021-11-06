@@ -36,7 +36,7 @@ TYPE_INFO_DICT = {
     "gitlab": "GitLab",
     "strava": "Strava",
     "bilibili": "bilibili",
-    "nike": "Nike",
+    "nike": "Nike Running",
     "strava": "Strava",
     "ns": "NS",
     "kindle": "Kindle",

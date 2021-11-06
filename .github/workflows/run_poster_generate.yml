@@ -55,7 +55,7 @@ jobs:
       - name: Run sync nike running script
         if: contains(env.TYPE, 'nike')
         run: |
-          python3 -m github_poster nike --nike_refresh_token "${{ secrets.NIKE_SECRET }}" --year 2021 --me ${{ env.ME }} --with-animation
+          python3 -m github_poster nike --nike_refresh_token "${{ secrets.NIKE_SECRET }}" --year 2021 --me "" --with-animation
 
 
       - name: Mv svg files to examples
