@@ -57,6 +57,10 @@ jobs:
         run: |
           python3 -m github_poster nike --nike_refresh_token "${{ secrets.NIKE_SECRET }}" --year 2021 --me "" --with-animation
 
+      - name: Run sync github script
+        if: contains(env.TYPE, 'github')
+        run: |
+          python3 -m github_poster github --github_user_name "${{GITHUB_NAME}}" --with-skyline --with-animation
 
       - name: Mv svg files to examples
         # only for me to show
