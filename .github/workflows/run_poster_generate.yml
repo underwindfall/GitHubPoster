@@ -64,7 +64,7 @@ jobs:
       - name: Run sync github script
         if: contains(env.TYPE, 'github')
         run: |
-          python3 -m github_poster github --github_user_name ${{env.GITHUB_NAME}} --me ${{ env.ME }} --with-skyline --with-animation --year 2019-${{ steps.date.outputs.date }}
+          python3 -m github_poster github --github_user_name ${{env.GITHUB_NAME}} --me ${{ env.ME }} --with-animation --year 2019-${{ steps.date.outputs.date }}
       
       - name: Run sync wakatime script
         if: contains(env.TYPE, 'wakatime')
