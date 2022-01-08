@@ -69,7 +69,7 @@ jobs:
       - name: Run sync wakatime script
         if: contains(env.TYPE, 'wakatime')
         run: |
-          python3 -m github_poster wakatime --wakatime_key=${{secrets.WAKATIME_TOKEN}} --me ${{ env.ME }} --year 2019-${{ steps.date.outputs.date }}      
+          python3 -m github_poster wakatime --wakatime_key=${{secrets.WAKATIME_TOKEN}} --me ${{ env.ME }} --year 2020-${{ steps.date.outputs.date }}      
 
       - name: Mv svg files to examples
         # only for me to show
