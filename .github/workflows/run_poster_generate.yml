@@ -59,7 +59,7 @@ jobs:
       - name: Run sync strava script
         if: contains(env.TYPE, 'strava')
         run: |
-          python3 -m github_poster strava --strava_client_id ${{ secrets.STRAVA_CLIENT_ID }} --strava_client_secret ${{ secrets.STRAVA_CLIENT_SECRET }} --strava_refresh_token ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }} --me ${{ env.ME }} --year 2020-2021 --is-circular
+          python3 -m github_poster strava --strava_client_id ${{ secrets.STRAVA_CLIENT_ID }} --strava_client_secret ${{ secrets.STRAVA_CLIENT_SECRET }} --strava_refresh_token ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }} --me ${{ env.ME }} --year 2020-2022 --with-animation 
 
       - name: Run sync github script
         if: contains(env.TYPE, 'github')
