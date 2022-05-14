@@ -50,11 +50,6 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y')"
-
-      - name: Run sync leetcode script
-        if: contains(env.TYPE, 'leetcode')
-        run: |
-          python3 -m github_poster leetcode --leetcode_cookie "${{ secrets.LEETCODE_CN_COOKIE }}" --year 2020-${{ steps.date.outputs.date }} --cn --me ${{ env.ME }} --with-animation
       
       - name: Run sync nike running script
         if: contains(env.TYPE, 'nike')
@@ -64,7 +59,7 @@ jobs:
       - name: Run sync strava script
         if: contains(env.TYPE, 'strava')
         run: |
-          python -m github_poster strava --strava_client_id ${{ secrets.STRAVA_CLIENT_ID }} --strava_client_secret ${{ secrets.STRAVA_CLIENT_SECRET }} --strava_refresh_token ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }} --me ${{ env.ME }} --year 2012-2021 --is-circular
+          python3 -m github_poster strava --strava_client_id ${{ secrets.STRAVA_CLIENT_ID }} --strava_client_secret ${{ secrets.STRAVA_CLIENT_SECRET }} --strava_refresh_token ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }} --me ${{ env.ME }} --year 2020-2021 --is-circular
 
       - name: Run sync github script
         if: contains(env.TYPE, 'github')
@@ -75,6 +70,11 @@ jobs:
         if: contains(env.TYPE, 'wakatime')
         run: |
           python3 -m github_poster wakatime --wakatime_key=${{secrets.WAKATIME_TOKEN}} --me ${{ env.ME }} --year 2020-${{ steps.date.outputs.date }}      
+
+      - name: Run sync leetcode script
+        if: contains(env.TYPE, 'leetcode')
+        run: |
+          python3 -m github_poster leetcode --leetcode_cookie "${{ secrets.LEETCODE_CN_COOKIE }}" --year 2020-${{ steps.date.outputs.date }} --cn --me ${{ env.ME }} --with-animation
 
       - name: Mv svg files to examples
         # only for me to show
